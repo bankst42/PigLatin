@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+public class PigLatin
+{
+  String primeFactorization( int num )
+  {
+   int i = 0;
+   String str = "";
+   while (i < num)
+   {
+    if (num % i == 0)
+    {
+     num = num/i; 
+     i = 0;
+     str = str + i + " * ";
+    }
+    else
+    {
+      i++;
+    }
+   }
+    
+    
+  }
