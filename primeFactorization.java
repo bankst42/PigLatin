@@ -4,11 +4,13 @@ public class primeFactorization
 {
   public static void main(String[] args)
   {
-    if (isPrime(19))
-      System.out.print(19 * 1);
+    Scanner scan = new Scanner(System.in);
+    int num = Integer.parseInt(scan.nextLine());
+    if (isPrime(num))
+      System.out.print("1 * " + num);
     else
     {
-    System.out.print(primeFactorization(19));
+    System.out.print(primeFactorization(num));
     }
   }
   
@@ -17,13 +19,13 @@ public class primeFactorization
    int i = 2;
    while(i < num)
    {
-    if (num % i = 0)
-      return false;
-    else
+    if (num % i == 0)
     {
-      return true;
+      return false;
     }
+    i++;
    }
+   return true;
   }
   public static String primeFactorization( int num )
   {
@@ -33,8 +35,13 @@ public class primeFactorization
    {
     if (num % i == 0)
     {
+     if (num/i != 1)
+     {
+      str = str + i + " * ";
+     }
+     else
+      str = str + i + " ";
      num = num/i; 
-     str = str + i + " * ";
      i = 2;
     }
     else
